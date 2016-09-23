@@ -31,5 +31,13 @@ mkdir out/6
 mkdir out/7
 ./jinjagen.py -d test.yaml -i test3.txt test4.txt && mv test3.txt.new test4.txt.new out/7
 
-find out -type f|xargs md5sum out.ref
+#test inplace in subdir (j2 ext)
+mkdir out/8
+./jinjagen.py -d test.yaml -i sub/test1.txt.j2 && mv sub/test1.txt out/8
+
+# test inclace (! .2 ext)
+mkdir out/9
+./jinjagen.py -d test.yaml -i sub/test2.txt && mv sub/test2.txt.new out/9
+
+find out -type f | sort | xargs md5sum out.ref
 

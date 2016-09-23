@@ -1,0 +1,8 @@
+hello {{ a }}
+
+hi {{ c }}
+
+is f {{ f }} ?
+
+that is {{ e }}
+

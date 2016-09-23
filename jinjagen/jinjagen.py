@@ -66,6 +66,7 @@ def main():
                 outname = base
             else:
                 outname = tail + '.new'
+            outname = os.path.join(head, outname)
             stdout = None
         elif args.out:
             outname = args.out
