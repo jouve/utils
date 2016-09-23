@@ -17,7 +17,7 @@ mkdir out/3
 
 # test output
 mkdir out/4
-./jinjagen.py -d test.yaml -o test/4/test1.txt test1.txt.j2
+./jinjagen.py -d test.yaml -o out/4/test1.txt test1.txt.j2
 
 # test inplace (.j2 ext)
 mkdir out/5
@@ -30,4 +30,6 @@ mkdir out/6
 # test inplace (multiple in)
 mkdir out/7
 ./jinjagen.py -d test.yaml -i test3.txt test4.txt && mv test3.txt.new test4.txt.new out/7
-  
+
+find out -type f|xargs md5sum out.ref
+
